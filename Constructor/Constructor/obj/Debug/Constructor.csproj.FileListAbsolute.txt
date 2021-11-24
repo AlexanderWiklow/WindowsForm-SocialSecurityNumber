@@ -1,0 +1,7 @@
+C:\Users\awikl\Desktop\Lexicon\C#\C# projekt\Constructor\Constructor\bin\Debug\Constructor.exe.config
+C:\Users\awikl\Desktop\Lexicon\C#\C# projekt\Constructor\Constructor\bin\Debug\Constructor.exe
+C:\Users\awikl\Desktop\Lexicon\C#\C# projekt\Constructor\Constructor\bin\Debug\Constructor.pdb
+C:\Users\awikl\Desktop\Lexicon\C#\C# projekt\Constructor\Constructor\obj\Debug\Constructor.csproj.AssemblyReference.cache
+C:\Users\awikl\Desktop\Lexicon\C#\C# projekt\Constructor\Constructor\obj\Debug\Constructor.csproj.CoreCompileInputs.cache
+C:\Users\awikl\Desktop\Lexicon\C#\C# projekt\Constructor\Constructor\obj\Debug\Constructor.exe
+C:\Users\awikl\Desktop\Lexicon\C#\C# projekt\Constructor\Constructor\obj\Debug\Constructor.pdb
