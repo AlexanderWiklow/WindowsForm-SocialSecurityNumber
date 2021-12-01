@@ -6,6 +6,66 @@ using System.Threading.Tasks;
 
 namespace Olika_Metoder
 {
+
+    public class first
+    {
+
+        //========= METOD 1 ========================================
+        public int CalcAverage(int[,] TalArray, int Row, int Col)
+        {
+            Random rnd = new Random();
+            int avg = 0;
+            int AntalTal = 0;
+            int sum = 0;
+
+            // Yttre loop som håller reda på raderna
+            for (int i = 0; i < Row; i++)
+            {
+                for (int j = 0; j < Col; j++)
+                {
+                    sum += TalArray[i, j];
+                    AntalTal++;
+                }
+            }
+
+            avg = sum / AntalTal;
+            return avg;
+        }
+
+        //================ METOD 2 ==================================
+        // Denna metod tar också inparametrar från main där vi skrev in informationen i arrayen.
+        public int CalcAntal(int[,] TalArray, int Row, int Col)
+        {
+            int AntalTal = 0;
+
+            // Yttre loop som håller reda på raderna
+            for (int i = 0; i < Row; i++)
+            {
+                // Inre loop som håller reda på kolumnerna i arrayen 
+                // (j) används för att referera till kolumnerna i arrayen
+                for (int j = 0; j < Col; j++)
+                {
+                    if (TalArray[i, j] > 15)
+                    {
+                        AntalTal++;
+                    }
+                }
+            }
+            return AntalTal;
+        }
+    }
+
+    // ==================== KLASS #2 SAMT METOD #3 =====================
+    class secondclass
+    {
+        // Den här metoden kan nå värdena i de två tidigare metoderna. Observera metoden är void. Alltså ingen return. Den tar två inparametrar, båda int. Kan nå båda metoderna eftersom dom är public int?
+        public void Method3(int avgTal, int AntalTalNum)
+        {
+            Console.WriteLine("Här är medel av alla värden: {0} och antalet värden under 15 = {1} st", avgTal, AntalTalNum);
+        }
+
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -45,126 +105,22 @@ namespace Olika_Metoder
                 {
                     // Fyll sedan arrayen med slumptal mellan 1 och 20
                     talArray[i, j] = rnd.Next(10, 21);
-                    // AntalTal++;
-                    // sum += TalArray[i, j];
-                    // Sum = TalArray[i] + TalArray[j];
                 }
             }
 
-            // int slumpTal = r.Next(10, 21);
-
-            secondclass s = new secondclass();
-
-            //int AntalV = s.TotResMethod();
-
-            Console.WriteLine("resultat {0}", s.TotResMethod());
-
-        }
-    }
-
-    class first
-    {
-        int avg = 0;
-        public int CalcAverage(int[,] TalArray, int Row, int Col)
-        {
-            Random rnd = new Random();
-            avg = 0;
-            int AntalTal = 0;
-            int sum = 0;
-
-            // Yttre loop som håller reda på raderna
-            for (int i = 0; i < Row; i++)
-            {
-                // Inre loop som håller reda på kolumnerna i arrayen 
-                // (j) används för att referera till kolumnerna i arrayen
-                for (int j = 0; j < Col; j++)
-                {
-
-                    sum += TalArray[i, j];
-                    // Sum = TalArray[i] + TalArray[j];
-                }
-            }
-
-            avg = sum / AntalTal;
-            return avg;
-        }
-
-
-
-        public int CalcAntal(int[,] TalArray, int Row, int Col)
-        {
-            //Random rnd = new Random();
-            //int avg = 0;
-            //int sum = 0;
-
-            int AntalTal = 0;
-
-            // Yttre loop som håller reda på raderna
-            for (int i = 0; i < Row; i++)
-            {
-                // Inre loop som håller reda på kolumnerna i arrayen 
-                // (j) används för att referera till kolumnerna i arrayen
-                for (int j = 0; j < Col; j++)
-                {
-                    // Fyll sedan arrayen med slumptal mellan 1 och 20
-                    // TalArray[i, j] = rnd.Next(1, 21);
-                    //AntalTal++;
-                    //sum += TalArray[i, j];
-                    // Sum = TalArray[i] + TalArray[j];
-
-                    if (TalArray[i,j] > 15)
-                    {
-                        AntalTal++;
-                    }
-                }
-            } 
-
-            //avg = sum / AntalTal;
-            return AntalTal;
-
+            // Man måste instansiera varje klass i main för att kunna nå innehållet. Instansierar i ett variabel för varje. Sedan sparar jag varje värde från metoderna var för sig i varsina variabler. class - metoder - inparametrar. Först metoderna och deras värden, sist metoden som returnerar båda metoders värden. 
             secondclass s = new secondclass();
             first f = new first();
-            int tal23 = s.lastmethod(AntalTal,avg); 
 
-        }
-
-    }
-
-    class secondclass
-    {
-        first f = new first();
-
-        public int lastmethod(int tal1, int tal2)
-        {
-
-            return
-        }
-
-        // constructor? 
-        public int totTal = ;
-        public secondclass()
-        {
-            Console.WriteLine("Antal tal {0} ", metod1);
-            Console.WriteLine("Antal tal > 5: {0} ", metod2);
-        }
-        public void TotResMethod()
-        {
+            int test11 = f.CalcAverage(talArray, rader, kolumner);
 
 
+            int result1 = f.CalcAverage(talArray, rader, kolumner);
+            int result2 = f.CalcAntal(talArray, rader, kolumner);
 
-            // instansiera en klass
-            //first f = new first();
+            s.Method3(result1, result2);
 
-            f.CalcAntal();
-
-            //Console.WriteLine("test {0}", f.CalcAverage(Antal));
-
-            //int valuefirst = f.CalcAverage(metod2);
-            //int valueSecond = metod2;
-            ////int AntalV = CalcVar.CalcAntal(TalArray, Rad, kolumn);
-
-            //Console.WriteLine("Antal tal {0} ", metod1);
-            //Console.WriteLine("Antal tal > 5: {0} ", metod2);
+            Console.ReadLine();
         }
     }
 }
